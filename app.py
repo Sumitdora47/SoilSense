@@ -59,7 +59,9 @@ def page(message="", values=None):
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SoilSense | Crop Recommendation</title><link rel="stylesheet" href="/style.css"></head><body>
-<header><div class="brand">🌱 SoilSense</div><nav><a href="#analyze">Analyze soil</a><a href="#statistics">Statistics</a><a href="#model">Model</a></nav></header>
+<header><div class="brand">
+  🌱 SoilSense <span class="brand-by">by Sumit</span>
+</div><nav><a href="#analyze">Analyze soil</a><a href="#statistics">Statistics</a><a href="#model">Model</a></nav></header>
 <main>
 <section class="hero"><div><p class="eyebrow">DATA-DRIVEN AGRICULTURE</p><h1>Know your soil.<br><em>Explore the right crop.</em></h1>
 <p class="intro">Enter soil nutrients and climate values to get a machine-learning recommendation based on the training dataset.</p>
