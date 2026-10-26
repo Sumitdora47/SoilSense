@@ -58,7 +58,7 @@ def page(message="", values=None):
     means = "".join(f"<tr><td>{esc(k)}</td><td>{v}</td></tr>" for k,v in STATS["means"].items())
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SoilSense | Crop Recommendation</title><link rel="stylesheet" href="/static/style.css"></head><body>
+<title>SoilSense | Crop Recommendation</title><link rel="stylesheet" href="/style.css"></head><body>
 <header><div class="brand">🌱 SoilSense</div><nav><a href="#analyze">Analyze soil</a><a href="#statistics">Statistics</a><a href="#model">Model</a></nav></header>
 <main>
 <section class="hero"><div><p class="eyebrow">DATA-DRIVEN AGRICULTURE</p><h1>Know your soil.<br><em>Explore the right crop.</em></h1>
@@ -90,9 +90,9 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/":
             self.send_html(page())
-        elif self.path == "/static/style.css":
+        elif self.path == "/style.css":
             try:
-                body = (BASE/"static"/"style.css").read_bytes()
+                body = (BASE/"style.css").read_bytes()
                 self.send_response(200); self.send_header("Content-Type","text/css; charset=utf-8")
                 self.send_header("Content-Length",str(len(body))); self.end_headers(); self.wfile.write(body)
             except OSError:
